@@ -5,7 +5,6 @@ exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void
 const headers_1 = require("next/headers");
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
-const cookieStore = (0, headers_1.cookies)();
 const dMode = (0, headers_1.draftMode)();
 async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
