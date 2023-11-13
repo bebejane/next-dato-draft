@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
-require("client-only");
 const DraftMode_module_scss_1 = __importDefault(require("./DraftMode.module.scss"));
 const actions_1 = require("./actions");
 const navigation_1 = require("next/navigation");

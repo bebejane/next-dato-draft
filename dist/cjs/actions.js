@@ -1,13 +1,15 @@
 "use strict";
+'use server';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void 0;
 const headers_1 = require("next/headers");
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
+const cookieStore = (0, headers_1.cookies)();
+const dMode = (0, headers_1.draftMode)();
 async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
-    (0, headers_1.cookies)();
-    (0, headers_1.draftMode)().disable();
+    dMode.disable();
     (0, navigation_1.redirect)(pathname ?? `/`);
 }
 exports.disableDraftMode = disableDraftMode;

@@ -1,4 +1,3 @@
-import "client-only";
 export type DraftModeProps = {
     enabled: boolean;
     draftUrl?: string;

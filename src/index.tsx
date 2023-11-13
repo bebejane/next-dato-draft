@@ -1,5 +1,5 @@
 'use client'
-import "client-only"
+
 import s from './DraftMode.module.scss'
 import { revalidateTag, revalidatePath, disableDraftMode } from './actions'
 import { usePathname } from 'next/navigation'
