@@ -5,11 +5,11 @@ import { revalidateTag as rt, revalidatePath as rp } from 'next/cache'
 
 export const dynamic = "force-dynamic";
 
-const dMode = draftMode()
+
 
 export async function disableDraftMode(pathname?: string) {
   console.log('disableDraftMode', pathname)
-  dMode.disable()
+  draftMode().disable()
   redirect(pathname ?? `/`)
 }
 

@@ -5,10 +5,9 @@ const headers_1 = require("next/headers");
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
 exports.dynamic = "force-dynamic";
-const dMode = (0, headers_1.draftMode)();
 async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
-    dMode.disable();
+    (0, headers_1.draftMode)().disable();
     (0, navigation_1.redirect)(pathname ?? `/`);
 }
 exports.disableDraftMode = disableDraftMode;

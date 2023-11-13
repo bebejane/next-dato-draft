@@ -2,10 +2,9 @@ import { draftMode } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidateTag as rt, revalidatePath as rp } from 'next/cache';
 export const dynamic = "force-dynamic";
-const dMode = draftMode();
 export async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
-    dMode.disable();
+    draftMode().disable();
     redirect(pathname ?? `/`);
 }
 export async function revalidateTag(tag) {
