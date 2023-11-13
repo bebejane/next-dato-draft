@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void 0;
-require("server-only");
+require("client-only");
 const headers_1 = require("next/headers");
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
