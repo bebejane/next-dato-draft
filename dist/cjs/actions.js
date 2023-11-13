@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void 0;
+exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = exports.dynamic = void 0;
 const headers_1 = require("next/headers");
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
+exports.dynamic = "force-dynamic";
 const dMode = (0, headers_1.draftMode)();
 async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
