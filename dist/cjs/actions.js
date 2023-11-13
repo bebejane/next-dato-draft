@@ -6,6 +6,7 @@ const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
 async function disableDraftMode(pathname) {
     console.log('disableDraftMode', pathname);
+    (0, headers_1.cookies)();
     (0, headers_1.draftMode)().disable();
     (0, navigation_1.redirect)(pathname ?? `/`);
 }

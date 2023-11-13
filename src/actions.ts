@@ -4,6 +4,7 @@ import { revalidateTag as rt, revalidatePath as rp } from 'next/cache'
 
 export async function disableDraftMode(pathname?: string) {
   console.log('disableDraftMode', pathname)
+  cookies();
   draftMode().disable()
   redirect(pathname ?? `/`)
 }
