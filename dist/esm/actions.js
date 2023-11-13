@@ -13,4 +13,4 @@ export async function revalidateTag(tag) {
 export async function revalidatePath(path) {
     return rp(path);
 }
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=actions.js.map

@@ -19,4 +19,4 @@ async function revalidatePath(path) {
     return (0, cache_1.revalidatePath)(path);
 }
 exports.revalidatePath = revalidatePath;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=actions.js.map
