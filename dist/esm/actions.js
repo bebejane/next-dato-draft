@@ -1,3 +1,4 @@
+import "server-only";
 import { draftMode, cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidateTag as rt, revalidatePath as rp } from 'next/cache';
