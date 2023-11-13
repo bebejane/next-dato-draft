@@ -1,5 +1,4 @@
 "use strict";
-'use server';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void 0;
 const headers_1 = require("next/headers");
