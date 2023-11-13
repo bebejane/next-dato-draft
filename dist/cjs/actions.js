@@ -1,4 +1,5 @@
 "use strict";
+'use server';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -27,8 +28,10 @@ exports.revalidatePath = exports.revalidateTag = exports.disableDraftMode = void
 const navigation_1 = require("next/navigation");
 const cache_1 = require("next/cache");
 async function disableDraftMode(pathname) {
+    'use server';
     console.log('disableDraftMode', pathname);
     const { draftMode } = await Promise.resolve().then(() => __importStar(require('next/headers')));
+    console.log(draftMode);
     draftMode().disable();
     (0, navigation_1.redirect)(pathname ?? `/`);
 }
