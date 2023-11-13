@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
+import { revalidateTag, revalidatePath } from './actions'
 import s from './DraftMode.module.scss'
-import { revalidateTag, revalidatePath, disableDraftMode } from './actions'
 import { usePathname } from 'next/navigation'
 import { useEffect, useTransition } from 'react'
 
@@ -9,14 +9,15 @@ export type DraftModeProps = {
   enabled: boolean
   draftUrl?: string,
   tag?: string
-  path?: string
+  path?: string,
+  disableDraftMode?: (pathname?: string) => Promise<void>
 }
 
-export default function DraftMode({ enabled, draftUrl, tag, path }: DraftModeProps) {
+export default function DraftMode({ enabled, draftUrl, tag, path, disableDraftMode }: DraftModeProps) {
 
   const pathname = usePathname()
   const [loading, startTransition] = useTransition();
-  console.log('draft mode', enabled, draftUrl, tag, path)
+
 
   useEffect(() => {
 
@@ -50,10 +51,7 @@ export default function DraftMode({ enabled, draftUrl, tag, path }: DraftModePro
   return (
     <div className={s.draftMode} >
       <div className={s.label}><img width="20" height="20" /><div>Draft Mode</div></div>
-      <button onClick={() => startTransition(() => {
-        console.log('exit draft mode')
-        disableDraftMode(pathname)
-      })}>
+      <button onClick={() => startTransition(async () => disableDraftMode?.(pathname))}>
         Exit
         {loading && <div className={s.loading}><div className={s.loader}></div></div>}
       </button>
