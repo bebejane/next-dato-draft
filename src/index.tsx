@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import s from './DraftMode.module.scss'
 import { revalidateTag, revalidatePath, disableDraftMode } from './actions'

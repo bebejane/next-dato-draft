@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import s from './DraftMode.module.scss';
 import { revalidateTag, revalidatePath, disableDraftMode } from './actions';
